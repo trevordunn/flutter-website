@@ -126,11 +126,7 @@
       </div>
       <div id="site-main-row">
         <nav id="sidenav">
-          <ul>
-            <li class=""><a href="." target="" rel=""><span>5. Learn more</span></a></li>
-            <div class="sidenav-divider" aria-hidden="true"></div>
-            <li class=""><a href="#"><span>From another platform?</span><div class="sidenav-expander"><span class="material-symbols">expand_more</span></div></a><ul><li><a href="." target="" rel=""><span>Flutter for Android devs</span></a></li><li><a href="." target="" rel=""><span>Flutter for React Native devs</span></a></li><li><a href="." target="" rel=""><span>Flutter for SwiftUI devs</span></a></li></ul></li>
-          </ul>
+          {% render sidenav-level-1.html, url:page.url, nav:sidenav, base_id:"side", active_nav:activeNav %}
         </nav>
         <div id="content-and-toc">
           <div id="site-primary">
