@@ -16,6 +16,7 @@ function setupTheme() {
 
 document.addEventListener("DOMContentLoaded", function(_) {
   setupTheme();
+  setupNav();
   initCookieNotice();
   setupCopyButtons();
 
@@ -23,6 +24,16 @@ document.addEventListener("DOMContentLoaded", function(_) {
   setupTabs();
   setupInlineToc();
 });
+
+function setupNav() {
+  const toggles = document.querySelectorAll('a.nav-link.collapsible');
+  toggles.forEach(function (toggle) {
+    toggle.addEventListener('click', (e) => {
+      toggle.classList.toggle('collapsed');
+      e.preventDefault();
+    });
+  });
+}
 
 function setupInlineToc() {
   // Set up the inline TOC's ability to expand and collapse.
