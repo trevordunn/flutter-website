@@ -314,6 +314,66 @@ pre, code {
 
   > button {
     padding: 0.5rem;
+
+    > span:first-child {
+      display: none;
+    }
+  }
+}
+
+@media(min-width: 769px) {
+  body.menu-wide-toggled {
+    #sidenav {
+      display: none;
+    }
+
+    #menu-button button > span {
+      &:first-child {
+        display: unset;
+      }
+
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  #sidenav {
+    display: none;
+  }
+
+  #menu-button button > span {
+    &:first-child {
+      display: unset;
+    }
+
+    &:last-child {
+      display: none;
+    }
+  }
+
+  body.menu-narrow-toggled {
+    #sidenav {
+      display: unset;
+      width: 100%;
+      padding: 0 0.5rem;
+    }
+
+    #content-and-toc, #site-footer {
+      display: none;
+    }
+
+    #menu-button button > span {
+      &:first-child {
+        display: none;
+      }
+
+      &:last-child {
+        display: unset;
+      }
+    }
   }
 }
 
@@ -421,7 +481,6 @@ pre, code {
   flex-grow: 1;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 1rem;
   margin: 1rem;
 
   @media(max-width: 576px) {
@@ -753,10 +812,6 @@ main {
   font-family: 'Google Sans';
   position: sticky;
   top: 1rem;
-
-  @media(max-width: 768px) {
-    display: none;
-  }
 
   .nav-header {
     font-weight: 500;

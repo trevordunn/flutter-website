@@ -14,6 +14,21 @@ function setupTheme() {
   }
 }
 
+function setupMenuToggle() {
+  const menuToggle = document.querySelector('#menu-button button');
+  if (!menuToggle) return;
+
+  menuToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (document.body.clientWidth > 768) {
+      document.body.classList.toggle('menu-wide-toggled');
+    } else {
+      document.body.classList.toggle('menu-narrow-toggled');
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function(_) {
   setupTheme();
   setupNav();
@@ -23,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function(_) {
   //setupSearch();
   setupTabs();
   setupInlineToc();
+  setupMenuToggle();
 });
 
 function setupNav() {
@@ -37,8 +53,8 @@ function setupNav() {
 
 function setupInlineToc() {
   // Set up the inline TOC's ability to expand and collapse.
-  const toggle = document.querySelectorAll('.site-toc--inline__toggle');
-  toggle.forEach(function (toggle) {
+  const toggles = document.querySelectorAll('.site-toc--inline__toggle');
+  toggles.forEach(function (toggle) {
     toggle.addEventListener('click', (_) => {
       const inlineToc = document.getElementById('site-toc--inline');
       if (inlineToc) {
@@ -49,8 +65,7 @@ function setupInlineToc() {
 }
 
 /**
- * Get the user's current operating system, or
- * `null` if not of one "macos", "windows", "linux", or "chromeos".
+ * Get the user's current operating system, or * `null` if not of one "macos", "windows", "linux", or "chromeos".
  *
  * @returns {'macos'|'linux'|'windows'|'chromeos'|null}
  */
