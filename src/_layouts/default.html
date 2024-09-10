@@ -1,10 +1,13 @@
 ---
 layout: base
 ---
+<div id="site-banner" role="alert">
+  <p>{% render banner.html %}</p>
+  <button id="banner-close-button" class="header-button" title="Close banner" aria-label="Close banner">
+    <span class="material-symbols-outlined" hidden="hidden">close</span>
+  </button>
+</div>
 
-<nav id="sidenav-inline">
-
-</nav>
 <main id="site-content">
   <header>
     <h1 id="document-title">{{title}}</h1>
