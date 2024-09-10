@@ -278,7 +278,7 @@ details {
 }
 
 #sidenav {
-  max-height: calc(100vh - 80px - 1rem);
+  max-height: calc(100vh - 80px);
 }
 
 #site-header {
@@ -549,7 +549,7 @@ details {
 #side-menu {
   position: sticky;
   top: 1rem;
-  max-height: calc(100vh - 80px - 3rem);
+  max-height: calc(100vh - 80px);
   padding-bottom: 1rem;
 
   display: flex;
