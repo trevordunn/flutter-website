@@ -29,6 +29,22 @@ function setupMenuToggle() {
   });
 }
 
+function scrollSidenavIntoView() {
+  const sidenav = document.getElementById('sidenav');
+  if (!sidenav) {
+    return;
+  }
+
+  const activeEntries = sidenav.querySelectorAll('a.nav-link.active');
+  if (activeEntries.length > 0) {
+    const activeEntry = activeEntries[activeEntries.length - 1];
+
+    sidenav.scrollTo({
+      top: activeEntry.offsetTop - window.innerHeight / 3,
+    });
+  }
+}
+
 function setupBanner() {
   const bannerClose = document.getElementById('banner-close-button');
   const siteBanner = document.getElementById('site-banner');
@@ -50,14 +66,15 @@ function setupBanner() {
 document.addEventListener("DOMContentLoaded", function(_) {
   setupTheme();
   setupBanner();
+  scrollSidenavIntoView();
   setupNav();
-  initCookieNotice();
   setUpCodeBlockButtons();
 
   //setupSearch();
   setupTabs();
   setupInlineToc();
   setupMenuToggle();
+  initCookieNotice();
 });
 
 function setupNav() {
