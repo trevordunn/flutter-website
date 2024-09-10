@@ -240,7 +240,7 @@ pre, code {
 }
 
 #sidenav {
-  max-height: calc(100vh - 80px - 3rem);
+  max-height: calc(100vh - 80px - 1rem);
 }
 
 #site-header {
@@ -323,6 +323,10 @@ pre, code {
 
 @media(min-width: 769px) {
   body.menu-wide-toggled {
+    #site-main-row {
+      justify-content: center;
+    }
+
     #sidenav {
       display: none;
     }
@@ -360,6 +364,10 @@ pre, code {
       width: 100%;
       padding: 0 0.5rem 1rem;
       max-height: unset;
+    }
+
+    #site-banner {
+      display: none;
     }
 
     #content-and-toc, #site-footer {
