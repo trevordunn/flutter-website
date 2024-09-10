@@ -47,7 +47,10 @@
         <li class="nav-item">
           <a class="nav-link {{class}}" href="{{entry.permalink}}"
              {%- if isExternal %} target="_blank" rel="noopener" {%- endif -%}>
-            {{entry.title}}
+            <div>
+              <span>{{entry.title}}</span>
+              {%- if isExternal %}<span class="material-symbols-outlined" aria-hidden="true">open_in_new</span>{%- endif -%}
+            </div>
           </a>
         </li>
       {% endif -%}

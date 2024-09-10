@@ -866,14 +866,27 @@ main {
       display: flex;
       flex-direction: row;
       align-items: center;
+      justify-content: space-between;
 
       cursor: pointer;
 
       color: var(--md-sys-color-on-surface);
       text-decoration: none;
 
+      > div {
+        display: inline-block;
+
+        .material-symbols-outlined {
+          font-size: 0.875rem;
+          margin-left: 0.125rem;
+        }
+      }
+
+      span {
+        vertical-align: middle;
+      }
+
       .expander {
-        margin-left: auto;
         transition: transform cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
       }
 
