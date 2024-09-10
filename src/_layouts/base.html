@@ -127,10 +127,11 @@
             {{ content }}
           </div>
           {% if toc != false -%}
-          <aside id="side-menu">
             {% assign tocContents = content | generate_toc %}
-            {% unless tocContents == null or tocContents == '' -%}
-            {% render side-toc.html, tocContents: tocContents %}
+            {% unless tocContents == null or tocContents == '' or tocContents.count < 1 -%}
+            <aside id="side-menu">
+              {% render side-toc.html, tocContents: tocContents %}
+            </aside>
             {% endunless %}
           {% endif -%}
         </div>
