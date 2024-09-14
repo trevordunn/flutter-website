@@ -63,6 +63,29 @@ function setupBanner() {
   siteBanner.hidden = false;
 }
 
+function setupSearch() {
+  const headerSearch = document.getElementById('header-search');
+  if (!headerSearch) return;
+  const submitButton = headerSearch.querySelector('button');
+  const input = headerSearch.querySelector('input');
+
+  function submitSearch(e) {
+    e.preventDefault();
+    const query = input.value;
+    const url = new URL(window.location);
+    url.pathname = '/search';
+    url.searchParams.set('q', query);
+    window.location = url.toString();
+  }
+
+  submitButton.addEventListener('click', submitSearch);
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      submitSearch(e);
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function(_) {
   setupTheme();
   setupBanner();
@@ -70,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function(_) {
   setupNav();
   setUpCodeBlockButtons();
 
-  //setupSearch();
+  setupSearch();
   setupTabs();
   setupInlineToc();
   setupMenuToggle();
