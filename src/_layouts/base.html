@@ -72,18 +72,20 @@
     {% endif -%}
   </head>
   <body{% if body_class %} class="{{ body_class }}"{% endif %}>
-  <a href="#document-title" id="skip-to-main" class="btn">
-    Skip to main content
-  </a>
-
     {%- if isProduction == true -%}
-      <noscript>
-        <iframe
-          src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag_manager_id }}"
-          height="0" width="0" style="display:none;visibility:hidden">
-        </iframe>
-      </noscript>
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag_manager_id }}"
+        height="0" width="0" style="display:none;visibility:hidden">
+      </iframe>
+    </noscript>
     {% endif -%}
+
+    <a href="#document-title" id="skip-to-main" class="btn">
+      Skip to main content
+    </a>
+
+    {% render cookie-notice.html %}
 
     <header id="site-header">
       <div id="header-leading">
