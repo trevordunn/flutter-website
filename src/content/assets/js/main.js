@@ -1,4 +1,9 @@
 function setupTheme() {
+  const storedTheme = window.localStorage.getItem('theme');
+  if (storedTheme === 'dark-mode' || storedTheme === 'light-mode') {
+    document.body.classList.add(storedTheme);
+  }
+
   const themeSwitcher = document.getElementById('theme-switcher');
 
   if (themeSwitcher) {
@@ -6,9 +11,11 @@ function setupTheme() {
       if (document.body.classList.contains('dark-mode')) {
         document.body.classList.remove('dark-mode');
         document.body.classList.add('light-mode');
+        window.localStorage.setItem('theme', 'light-mode');
       } else {
         document.body.classList.remove('light-mode');
         document.body.classList.add('dark-mode');
+        window.localStorage.setItem('theme', 'dark-mode');
       }
     });
   }
@@ -155,9 +162,6 @@ function getOS() {
   return null;
 }
 
-/**
- * Activate the cookie notice footer.
- */
 function initCookieNotice() {
   const cookieKey = 'cookie-consent';
   const currentDate = Date.now();

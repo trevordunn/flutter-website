@@ -51,6 +51,10 @@ body {
   --md-sys-color-surface-container-high: rgb(231 231 240);
   --md-sys-color-surface-container-highest: rgb(225 226 234);
 
+  &:not(.dark-mode) .dark-mode-visible {
+    display: none;
+  }
+
   &.dark-mode {
     --md-sys-color-primary: rgb(173 198 255);
     --md-sys-color-surface-tint: rgb(173 198 255);
@@ -101,6 +105,10 @@ body {
     --md-sys-color-surface-container: rgb(29 32 38);
     --md-sys-color-surface-container-high: rgb(40 42 48);
     --md-sys-color-surface-container-highest: rgb(50 53 59);
+
+    .light-mode-visible {
+      display: none;
+    }
   }
 }
 
@@ -1151,10 +1159,6 @@ main {
         text-decoration: none;
       }
 
-      &:focus {
-
-      }
-
       &:active {
         color: #03448c;
       }
@@ -1709,15 +1713,28 @@ table.table {
     padding: 0.75rem;
   }
 
+  td {
+    border-top: 1px solid var(--md-sys-color-outline-variant);
+  }
+
   &.table-striped tbody tr:nth-of-type(odd) {
     background-color: var(--md-sys-color-surface-container);
   }
 }
 
-.table-wrapper {
+.table-wrapper, .scrollable-table {
   border-radius: 0.375rem;
   border: 1px solid var(--md-sys-color-outline-variant);
   overflow-x: auto;
+}
+
+.scrollable-table {
+  overflow-y: scroll;
+  max-height: 20rem;
+
+  table {
+    width: 100%;
+  }
 }
 
 figure {
