@@ -813,6 +813,7 @@ main {
       color: #4a4a4a;
       opacity: 0;
       text-decoration: none;
+      user-select: none;
     }
 
     &:hover .heading-link {
