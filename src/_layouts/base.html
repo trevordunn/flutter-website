@@ -130,7 +130,7 @@
           </div>
           {% if toc != false -%}
             {% assign tocContents = content | generate_toc %}
-            {% unless tocContents == null or tocContents == '' or tocContents.count < 1 -%}
+            {% unless tocContents == null or tocContents == '' or tocContents.count < 2 -%}
             <aside id="side-menu">
               {% render side-toc.html, tocContents: tocContents %}
             </aside>
