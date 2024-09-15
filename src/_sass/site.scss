@@ -1752,4 +1752,81 @@ figure {
     font-style: italic;
     text-align: center;
   }
+
+  &.code-and-image {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    justify-content: space-between;
+
+    > div {
+      width: 100%;
+
+      &:last-child {
+        text-align: center;
+      }
+    }
+
+    @media(min-width: 769px) {
+      > div {
+        &:first-child {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+
+        &:last-child {
+          flex: 0 0 45%;
+          max-width: 45%;
+        }
+      }
+
+      figcaption {
+        text-align: left;
+      }
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+// A big button centered on top of an image.
+//
+// The container is typically a <div> element. The div has only 2 children:
+// an <img> element (the background) and a <a class="btn"> button.
+//
+// The image should be very bright and slightly blurred so that the button
+// stands out.
+.juicy-button-container {
+  position: relative;
+  padding: 2em 0;
+
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+  }
+
+  .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+
+    // Add a white "glow" that separates the button from the background.
+    box-shadow: 0 0 10px 10px white;
+
+    // Make the button extra large.
+    @media (min-width: 600px) {
+      font-size: 150%;
+      padding: 0.7rem;
+    }
+
+    @media (min-width: 900px) {
+      font-size: 200%;
+      padding: 1rem;
+    }
+  }
 }
