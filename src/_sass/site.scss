@@ -224,7 +224,7 @@ button, input, select, textarea {
   padding: 0;
 }
 
-.material-symbols, .material-symbols-outlined {
+.material-symbols {
   font-family: "Material Symbols Outlined";
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
   font-weight: normal;
@@ -248,7 +248,7 @@ button, input, select, textarea {
           'opsz' 48
 }
 
-.material-symbols, .material-symbols-outlined.ms-filled {
+.material-symbols.ms-filled {
   font-variation-settings: 'FILL' 1;
 }
 
@@ -1052,7 +1052,7 @@ main {
       > div {
         display: inline-block;
 
-        .material-symbols-outlined, .material-symbols {
+        .material-symbols {
           font-size: 0.875rem;
           margin-left: 0.125rem;
         }
