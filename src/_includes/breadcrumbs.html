@@ -12,7 +12,7 @@ Embeds breadcrumb RDFa, follows ARIA guidelines. References:
 {% assign breadcrumbs = page | breadcrumbsForPage -%}
 {% if breadcrumbs -%}
 <nav class="breadcrumbs" aria-label="breadcrumb">
-  <ol class="breadcrumb-list" vocab="https://schema.org/" typeof="BreadcrumbList">
+  <ol vocab="https://schema.org/" typeof="BreadcrumbList">
     {% for crumb in breadcrumbs -%}
     <li class="breadcrumb-item {%- if forloop.last %} active {%- endif %}"
         property="itemListElement" typeof="ListItem"

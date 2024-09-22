@@ -1,0 +1,33 @@
+#cookie-notice {
+  position: fixed;
+  bottom: 0;
+  display: none;
+  width: 100%;
+
+  background-color: var(--site-secondary-container); // TODO(parlough): Consider secondary fixed.
+  color: var(--site-on-secondary-container);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+
+  z-index: 100;
+  padding: 1.5rem;
+
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  line-height: 1.5;
+
+  p {
+    max-width: 40rem;
+  }
+
+  &.show {
+    display: flex;
+  }
+
+  button {
+    white-space: nowrap;
+    background-color: var(--site-secondary);
+    color: var(--site-on-secondary);
+  }
+}

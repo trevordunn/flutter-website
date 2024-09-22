@@ -1,8 +1,3 @@
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
 body {
   --site-ui-font-family: 'Google Sans', 'Roboto', ui-sans, sans-serif;
   --site-body-font-family: 'Google Sans Text', 'Roboto', ui-sans, sans-serif;
@@ -31,7 +26,6 @@ body {
 
   --site-outline: rgb(114 119 133); // Button border
   --site-outline-variant: rgb(194 198 214);
-
 
 
   --code-highlight-bg-color: #FFF59C;
@@ -89,8 +83,6 @@ body {
     }
   }
 
-  -webkit-font-smoothing: antialiased;
-  font-family: var(--site-body-font-family), ui-sans, sans-serif;
   background-color: var(--site-surface-container-low);
   color: var(--site-on-surface);
 }
