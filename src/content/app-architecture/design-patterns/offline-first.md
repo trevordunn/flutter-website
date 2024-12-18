@@ -165,7 +165,7 @@ for when the user is offline or a network call fails.
 In this case, the `UserProfileRepository` attempts to obtain the `UserProfile` 
 from the remote API server using the `ApiClientService`.
 If this request fails, 
-then returns the locally stored `UserProfile` from the `DatabaseService`.
+it then returns the locally stored `UserProfile` from the `DatabaseService`.
 
 <?code-excerpt "lib/data/repositories/user_profile_repository.dart (getUserProfileFallback)" replace="/Fallback//g"?>
 ```dart
